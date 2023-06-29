@@ -1,5 +1,5 @@
 import { cache } from 'react';
-/* import { User } from '../migrations/1687193322-createUsers'; */
+import { User } from '../migrations/1687949730-createUsers';
 import { sql } from './connect';
 
 type UserWithPasswordHash = User & {
@@ -23,8 +23,7 @@ export const getUserByUsername = cache(async (username: string) => {
   const [user] = await sql<User[]>`
     SELECT
       id,
-      username,
-      email
+      username
     FROM
       users
     WHERE
@@ -35,17 +34,16 @@ export const getUserByUsername = cache(async (username: string) => {
 });
 
 export const createUser = cache(
-  async (username: string, passwordHash: string, email: string) => {
+  async (username: string, passwordHash: string) => {
     console.log(passwordHash);
     const [user] = await sql<User[]>`
     INSERT INTO users
-      (username, password_hash, email)
+      (username, password_hash)
     VALUES
-      (${username.toLowerCase()}, ${passwordHash}, ${email})
+      (${username.toLowerCase()}, ${passwordHash})
     RETURNING
       id,
-      username,
-      email
+      username
  `;
 
     return user;

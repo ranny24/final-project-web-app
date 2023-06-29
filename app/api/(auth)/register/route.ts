@@ -3,10 +3,10 @@ import bcrypt from 'bcrypt';
 import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { createSession } from '../../../database/sessions';
-import { createUser, getUserByUsername } from '../../../database/users';
-import { User } from '../../../migrations/1687949730-createUsers';
-import { secureCookieOptions } from '../../../util/cookies';
+import { createSession } from '../../../../database/sessions';
+import { createUser, getUserByUsername } from '../../../../database/users';
+import { User } from '../../../../migrations/1687949730-createUsers';
+import { secureCookieOptions } from '../../../../util/cookies';
 
 type Error = {
   error: string;
