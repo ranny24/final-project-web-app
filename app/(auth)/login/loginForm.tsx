@@ -51,7 +51,7 @@ export default function LoginForm(props: Props) {
     <div className={styles.loginContainer}>
       <div className={styles.form}>
         <h4 className={styles.title}>Please, login.</h4>
-
+        <img src="/image.png" alt="background" className={styles.background}/>
         <form
           className={styles.loginForm}
           onSubmit={(event) => event.preventDefault()}

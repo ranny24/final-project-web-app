@@ -1,7 +1,7 @@
-.container {
+ .container {
   max-width: 960px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 30px;
 }
 
 .navbar {
@@ -24,6 +24,7 @@
 
 .main {
   text-align: center;
+  color: #7a2929;
 }
 
 .logo {

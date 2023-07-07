@@ -31,26 +31,43 @@ export default function RegisterForm() {
   }
 
   return (
-    <form onSubmit={(event) => event.preventDefault()}>
-      <label>
-        username:
-        <input
-          value={username}
-          onChange={(event) => setUsername(event.currentTarget.value)}
-        />
-      </label>
-      <label>
-        password:
+    <div className={styles.loginContainer}>
+
+    <div className={styles.form}>
+
+
+
+      <img src="/image.png" alt="background" className={styles.background}/>
+
+      <h4 className={styles.title}>Please, register.</h4>
+
+      <form className={styles.loginForm}
+      onSubmit={(event) => event.preventDefault()}>
+
+<div>
+            <label htmlFor="username">Username:</label>
+            <input
+              value={username}
+              onChange={(event) => setUsername(event.currentTarget.value)}
+            />
+          </div>
+      <div>
+      <label htmlFor="password">
+        Password:</label>
         <input
           type="password"
           value={password}
           onChange={(event) => setPassword(event.currentTarget.value)}
         />
-      </label>
+        </div>
+
       <button className={styles.button} onClick={async () => await register()}>
         sign up
       </button>
       {error !== '' && <div className={styles.error}>{error}</div>}
     </form>
+    </div>
+    </div>
+
   );
 }

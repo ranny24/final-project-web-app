@@ -1,11 +1,13 @@
+
 .loginContainer {
   display: flex;
   flex-direction: column;
 
+
   .form {
     height: 400px;
     width: 600px;
-    background-color: rgba(255, 255, 255, 0.13);
+    background: #f5ebf2;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -88,4 +90,15 @@
   color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
   margin-bottom: 25px;
+}
+
+.background {
+
+  width: 598.802px;
+  height: 600px;
+  position: absolute;
+  left: 70%;
+
+
+ flex-shrink: 0;
 }

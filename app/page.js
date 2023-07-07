@@ -1,39 +1,55 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import styles from './page.module.css';
+import Head from 'next/head';
+import EventList from './components/events/event-list';
+import SideBanner from './components/layout/side-banner';
 
-const HomePage = () => {
+/* import { getFeaturedEvents } from '../helpers/api-util'; */
+
+function HomePage(props) {
   return (
-    <div className={styles.container}>
-      <img src="/citybuzz1.png" alt="CityBuzz Logo" className={styles.logo}/>
-      <nav className={styles.navbar}>
-        <ul className={styles.navbarLinks}>
-          <li>
-            <Link href="/create-event">
-              <div className={styles.navbarLink}>Create Event</div>
-            </Link>
-          </li>
-          <li>
-            <Link href="/login">
-              <div className={styles.navbarLink}>Log In</div>
-            </Link>
-          </li>
-          <li>
-            <Link href="/register">
-              <div className={styles.navbarLink}>Register</div>
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <main className={styles.main}>
-        <h1>Welcome to CityBuzz!</h1>
-        <p>Discover exciting events happening in your city.</p>
-      </main>
+    <div>
+      <Head>
+        <title>Next.js Events App - Home Page</title>
+        <meta
+          name="description"
+          content="Discover events from all around the world"
+        />
+      </Head>
+      <SideBanner>
+        <EventList items={props.featuredEvents} />
+      </SideBanner>
     </div>
-
-
-
   );
-};
+}
+
+/*
+  This page that renders the featured events
+  should be understood by search engine crawlers.
+  So that, visitors are directed to the site.
+
+  It is not likely that this data changes frequently.
+  Then, there is no reason to load it on the client.
+  This is not user specific data.
+
+  As a result, a pre-rendering method should be used.
+  SSR is not needed, because there is no need to
+  pre-render it for every incoming request.
+
+  This is why it is chosen to use getStaticProps.
+  It is suitable to pre-render the page
+  during the build time.
+
+  Revalidate is set to get the mostly updated content.
+*/
+
+export async function getStaticProps() {
+  const featuredEvents = await getFeaturedEvents();
+
+  return {
+    props: {
+      featuredEvents: featuredEvents,
+    },
+    revalidate: 1800,
+  };
+}
 
 export default HomePage;
