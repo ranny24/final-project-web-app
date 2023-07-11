@@ -48,10 +48,12 @@ export default function LoginForm(props: Props) {
   // }
 
   return (
+
+
     <div className={styles.loginContainer}>
       <div className={styles.form}>
         <h4 className={styles.title}>Please, login.</h4>
-        <img src="/image.png" alt="background" className={styles.background}/>
+
         <form
           className={styles.loginForm}
           onSubmit={(event) => event.preventDefault()}
@@ -84,6 +86,7 @@ export default function LoginForm(props: Props) {
               <Link href="/register" className={styles.registerLink}>
                 Register here
               </Link>
+              {/* <img src="/rock.png" alt="background" width={100} height={100} className={styles.background}/> */}
             </p>
           </div>
         </form>

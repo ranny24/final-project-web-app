@@ -15,7 +15,7 @@ export function LogoutButton() {
           router.refresh();
         }}
       >
-        logout
+        Logout
       </button>
     </form>
   );
