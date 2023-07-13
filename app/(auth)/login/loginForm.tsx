@@ -59,14 +59,14 @@ export default function LoginForm(props: Props) {
           onSubmit={(event) => event.preventDefault()}
         >
           <div>
-            <label htmlFor="username">Username:</label>
+            <label className={styles.user} htmlFor="username">Username:</label>
             <input
               value={username}
               onChange={(event) => setUsername(event.currentTarget.value)}
             />
           </div>
           <div>
-            <label htmlFor="username">Password:</label>
+            <label className={styles.user} htmlFor="username">Password:</label>
             <input
               value={password}
               type="password"
@@ -86,11 +86,13 @@ export default function LoginForm(props: Props) {
               <Link href="/register" className={styles.registerLink}>
                 Register here
               </Link>
+
               {/* <img src="/rock.png" alt="background" width={100} height={100} className={styles.background}/> */}
             </p>
           </div>
         </form>
       </div>
     </div>
+
   );
 }

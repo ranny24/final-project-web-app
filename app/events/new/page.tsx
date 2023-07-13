@@ -1,7 +1,10 @@
+import EventForm from './EventForm';
+import styles from './page.module.scss';
+
 const newEventPage = () => {
   return (
-    <main>
-      <button> Creat New Event</button>
+    <main className={styles.main}>
+      <EventForm />
     </main>
   );
 };

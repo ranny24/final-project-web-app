@@ -76,11 +76,7 @@
   }
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+
 
 html,
 body {
@@ -90,7 +86,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: #7a2929;
+  background-color: #2a2e36;
 }
 
 a {

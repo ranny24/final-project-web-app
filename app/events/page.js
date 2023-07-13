@@ -10,32 +10,36 @@ export const metadata = {
 
 export default async function EventPage() {
   const events = await getEvents();
-console.log (events)
+
   return (
     <main>
       <h1 className={styles.h1}>These are the latest Events in Town!</h1>
       {events.map((event) => {
         return (
-          <div
-            key={`event-div-${event.id}`}
-
-          >
-            <Link href={`/event/${event.id}`}>{event.bandName}</Link>
-            <br />
-           <div className={styles.container}>
-
-            <Image className={styles.image}
-              src={event.image}
-              alt="Picture of the author"
-              width={0}
-              sizes="100vw"
-              height={0}
-              style={{ width: '50%', height: 'auto' }}
-
-            />
-          </div>
-
-            {event.description}
+          <div key={`event-div-${event.id}`} className={styles.eventContainer}>
+            <Link href={`/event/${event.id}`}>
+              <p className={styles.bandName}>{event.bandName}</p>
+            </Link>
+            <div className={styles.imageContainer}>
+              <Image
+                src={event.image}
+                alt="Picture of the author"
+                width={500}
+                height={300}
+                layout="responsive"
+              />
+            </div>
+            <div className={styles.eventDetails}>
+              <div className={styles.detail}>
+                <strong>Venue:</strong> {event.venue}
+              </div>
+              <div className={styles.detail}>
+                <strong>Date:</strong> {event.date}
+              </div>
+              <div className={styles.detail}>
+                <strong>Description:</strong> {event.description}
+              </div>
+            </div>
           </div>
         );
       })}

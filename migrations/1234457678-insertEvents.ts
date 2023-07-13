@@ -49,7 +49,6 @@ export const events = [
     date: '2023-09-05',
     description: 'We will rock you',
     image: '/images/queen.jpg',
-
   },
   {
     id: 6,
@@ -74,23 +73,6 @@ export const events = [
     date: '2023-10-10',
     description: 'Rock and blues extravaganza',
     image: '/images/rolling.jpg',
-  },
-  {
-    id: 9,
-    bandName: 'Black Sabbath',
-    venue: 'Ozzfest',
-    date: '2023-11-03',
-    description: 'The masters of heavy metal',
-    image: '/images/black.jpg',
-
-  },
-  {
-    id: 10,
-    bandName: 'The Who',
-    venue: 'Royal Albert Hall',
-    date: '2023-11-20',
-    description: 'Legendary rockers in concert',
-    image: '/images/thewho.jpg',
   },
 ];
 

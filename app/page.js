@@ -22,23 +22,17 @@ const HomePage = () => {
           <Link className={styles.test} href="/register">
             <div className={styles.navbarLink}>Register</div>
           </Link>
+          <Link className={styles.test} href="/about">
+            <div className={styles.navbarLink}>About Us</div>
+          </Link>
         </nav>
 
         <div className={styles.gif}>
           <img src="/gif.gif" alt="Logo" className={styles.logo} />
           <div>
-            <h3 className={styles.h3}> dard dummy text ever since </h3>
+            <h3 className={styles.h3}> Your Ultimate Concert Hub! </h3>
             <p className={styles.text}>
-              What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
-              printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an
-              unknown printer took a galley of type and scrambled it to make a
-              type specimen book. It has survived not only five centuries, but
-              also the leap into electronic typesetting, remaining essentially
-              unchanged. It was popularised in the 1960s with the release of
-              Letraset sheets containing Lorem Ipsum passages, and more recently
-              with desktop publishing software like Aldus PageMaker including
-              versions of Lorem Ipsum
+            Welcome to Rock City Riffs, your go-to platform for discovering and connecting with rock band concerts happening in your city! With our comprehensive database of upcoming shows, you'll never miss the opportunity to experience the electrifying energy of live rock music. Sign up to personalize your concert experience, create and share events, and connect with fellow rock enthusiasts. We're here to foster a vibrant community of music lovers who celebrate the power of rock. Join us today, let the music ignite your soul, and rock on with Rock City Riffs!
             </p>
           </div>
         </div>

@@ -19,16 +19,20 @@
 }
 .test {
   padding: 10px 20px;
-  background-color: #7a2929;
+  background-color: transparent;
   border-radius: 20px;
   text-align: center;
   margin-left: 40px;
   transition: transform 0.3s ease, font-weight 0.3s ease, box-shadow 0.3s ease;
   font-size: 1.125rem;
+  border: solid 2px #E42807;
+
 }
 .test:hover {
   cursor: pointer;
   transform: scale(1.05);
+  effect: 0.3s easein-out;
+  background-color: #E42807;
 }
 
 .navbarLink {
@@ -42,13 +46,14 @@
 .main {
   text-align: center;
   color: #7a2929;
-  background-color: black;
+  background-color: ack;
   height: 100vh;
 }
 .gif {
   text-align: left;
   display: flex;
   margin-top: 100px;
+
 }
 .text {
   font-size: 1.5rem;
@@ -58,6 +63,8 @@
   align-items: left;
   text-align: left;
   padding-left: 200px;
+
+
 }
 .logo {
   width: 300px;
@@ -72,18 +79,21 @@
   padding-bottom: 10px;
   font-family: 'Abril Fatface', sans-serif;
   letter-spacing: 0.2rem;
+
 }
 
 .h3 {
   padding-left: 200px;
   padding-bottom: 50px;
   font-size: 2rem;
-  color: red; 
+  color: #E42807;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.2rem;
 }
 .par {
   padding-bottom: 50px;
   font-size: 1.5rem;
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 0.2rem;
-  color: red;
+  color: #E42807;
 }

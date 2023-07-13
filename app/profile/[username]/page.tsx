@@ -14,11 +14,17 @@ export default async function ProfileUsernamePage({ params }: Props) {
   }
 
   return (
-
-      <main className={styles.id}>
-      
-        <div>id: {user.id}</div>
-        <div>username: {user.username}</div>
-      </main>
+    <main className={styles.profilePage}>
+      <div className={styles.profileContainer}>
+        <div className={styles.profilePicture}></div>
+        <div className={styles.profileInfo}>
+          <h1 className={styles.name}>{user.name}</h1>
+          <div className={styles.favoritesContainer}>
+            <h2 className={styles.sectionTitle}>Favorites</h2>
+            {/* Add your favorite items/components here */}
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }

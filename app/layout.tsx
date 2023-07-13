@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import { cookies } from 'next/headers';
 import Link from 'next/link';
 import { getUserBySessionToken } from '../database/users';
+import Footer from './components/Footer';
 import NavPage from './components/Nav';
 import { LogoutButton } from './LogoutButton';
 
@@ -36,12 +37,18 @@ export default async function RootLayout({ children }: Props) {
               <LogoutButton /> */}<NavPage user={user}/>
             </>
           ) : (
-            <></>
+            <>
+            </>
+
           )}
+
         </div>
 
         {children}
+        <Footer/>
       </body>
+
     </html>
+
   );
 }

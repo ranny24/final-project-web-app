@@ -1,4 +1,42 @@
-.id {
-  margin: 100px 50px;
-  color: rgb(66, 7, 242);
+/* page.module.scss */
+
+.profilePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.profileContainer {
+  display: flex;
+  align-items: center;
+}
+
+.profilePicture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 20px;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.favoritesContainer {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  margin-bottom: 10px;
 }

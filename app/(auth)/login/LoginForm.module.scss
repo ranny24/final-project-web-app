@@ -1,26 +1,26 @@
-
 .loginContainer {
   display: flex;
   flex-direction: column;
 
 
   .form {
-    height: 400px;
-    width: 600px;
-    background: #3c353a;
+    height: 478px;
+    width: 520px;
+    border-radius: 20px;
+    border: 2px solid #FFF;
+    box-shadow: -40.33333206176758px 40.33333206176758px 40.33333206176758px 0px rgba(255, 255, 255, 0.10) inset, 40.33333206176758px -40.33333206176758px 40.33333206176758px 0px rgba(0, 0, 0, 0.10) inset;
+    backdrop-filter: blur(40.33333206176758px);
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    border-radius: 10px;
-    border: 2px solid rgba(198, 157, 157, 0.1);
-    box-shadow: 0 0 10px rgba(117, 111, 160, 0.6);
-    padding: 40px 35px;
 
     .loginForm {
       display: flex;
       flex-direction: column;
       gap: 16px;
+      border-radius: 20px;
+
 
       div {
         display: flex;
@@ -100,5 +100,5 @@
   left: 70%;
 
 
- flex-shrink: 0;
+  flex-shrink: 0;
 }

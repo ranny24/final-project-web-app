@@ -9,14 +9,16 @@ export const getEvents = cache(async () => {
   return events;
 });
 
-export const getArtworkById = cache(async (id: number) => {
-  const [events] = await sql<Event[]>`
-    SELECT
-      *
-    FROM
-    events
-    WHERE
-      id = ${id}
-  `;
-  return events;
-});
+export const createEvent = cache(
+  async (bandame: string, venue: string, date: number, description: string) => {
+    const [event] = await sql<Event[]>`
+      INSERT INTO events
+        (band_name, venue, description, date)
+      VALUES
+        (${bandame}, ${venue}, ${description} , ${date})
+      RETURNING *
+    `;
+
+    return event;
+  },
+);

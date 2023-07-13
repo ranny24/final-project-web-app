@@ -1,0 +1,25 @@
+/* Footer.module.scss */
+
+.footer {
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.socialIcons p {
+  color: #333;
+  font-size: 30px; /* Increase the font-size for larger icons */
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.socialIcons p:hover {
+  color: #007bff;
+}
