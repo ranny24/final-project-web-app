@@ -4,9 +4,9 @@ import { Route } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { getSafeReturnToPath } from '../../../util/validation';
-import { LoginResponseBodyPost } from '../../api/(auth)/login/route';
-import styles from './LoginForm.module.scss';
+import { getSafeReturnToPath } from '../util/validation';
+import styles from './(auth)/login/LoginForm.module.scss';
+import { LoginResponseBodyPost } from './api/(auth)/login/route';
 
 type Props = { returnTo?: string | string[] };
 
@@ -48,8 +48,6 @@ export default function LoginForm(props: Props) {
   // }
 
   return (
-
-
     <div className={styles.loginContainer}>
       <div className={styles.form}>
         <h4 className={styles.title}>Please, login.</h4>
@@ -59,14 +57,18 @@ export default function LoginForm(props: Props) {
           onSubmit={(event) => event.preventDefault()}
         >
           <div>
-            <label className={styles.user} htmlFor="username">Username:</label>
+            <label className={styles.user} htmlFor="username">
+              Username:
+            </label>
             <input
               value={username}
               onChange={(event) => setUsername(event.currentTarget.value)}
             />
           </div>
           <div>
-            <label className={styles.user} htmlFor="username">Password:</label>
+            <label className={styles.user} htmlFor="username">
+              Password:
+            </label>
             <input
               value={password}
               type="password"
@@ -86,13 +88,11 @@ export default function LoginForm(props: Props) {
               <Link href="/register" className={styles.registerLink}>
                 Register here
               </Link>
-
               {/* <img src="/rock.png" alt="background" width={100} height={100} className={styles.background}/> */}
             </p>
           </div>
         </form>
       </div>
     </div>
-
   );
 }

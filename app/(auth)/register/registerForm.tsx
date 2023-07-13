@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useRef, useState } from 'react';
 import { RegisterResponseBodyPost } from '../../api/(auth)/register/route';
@@ -9,9 +8,8 @@ import styles from './RegisterForm.module.scss';
 
 export default function RegisterForm() {
   const [username, setUsername] = useState('');
-
   const [password, setPassword] = useState('');
-  const [profileName, setProfileName] = useState('');
+  /* const [profileName, setProfileName] = useState(''); */
   const [bio, setBio] = useState('');
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [passwordShown, setPasswordShown] = useState(false);
