@@ -7,25 +7,17 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.socialIcons}>
-        <Link href="https://www.facebook.com/" passHref>
-          <p target="_blank" rel="noopener noreferrer">
-            <FaFacebook />
-          </p>
+        <Link href="https://www.facebook.com/">
+          <FaFacebook />
         </Link>
-        <Link href="https://www.instagram.com/" passHref>
-          <p target="_blank" rel="noopener noreferrer">
-            <FaInstagram />
-          </p>
+        <Link href="https://www.instagram.com/">
+          <FaInstagram />
         </Link>
-        <Link href="https://twitter.com/" passHref>
-          <p target="_blank" rel="noopener noreferrer">
-            <FaTwitter />
-          </p>
+        <Link href="https://twitter.com/">
+          <FaTwitter />
         </Link>
-        <Link href="https://www.youtube.com/" passHref>
-          <p target="_blank" rel="noopener noreferrer">
-            <FaYoutube />
-          </p>
+        <Link href="https://www.youtube.com/">
+          <FaYoutube />
         </Link>
       </div>
     </footer>

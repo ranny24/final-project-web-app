@@ -1,7 +1,6 @@
 'use client';
-import { NextResponse } from 'next/server';
+
 import { useState } from 'react';
-import { createEvent } from '../../../database/events';
 import { Event } from '../../../migrations/1234457678-insertEvents';
 import styles from './EventForm.module.scss';
 

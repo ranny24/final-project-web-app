@@ -31,21 +31,21 @@ export default async function ProfileUsernamePage(props: Props) {
               width={100}
               height={100}
               alt="Profile avatar"
-              className={styles.profileAvatar}
+
             />
           ) : (
             <Image
-              src={user?.imageUrl}
+              src={user.imageUrl}
               width={100}
               height={100}
               alt="Profile avatar uploaded by User"
-              className={styles.profileAvatar}
+
             />
           )}
           {/* {JSON.stringify(user)} */}
         </div>
         <div className={styles.profileInfo}>
-          <h1 className={styles.name}>{user.name}</h1>
+          <h1 className={styles.name}>{user.username}</h1>
           <div className={styles.favoritesContainer}>
             <h2 className={styles.sectionTitle}>Favorites</h2>
             {/* Add your favorite items/components here */}
