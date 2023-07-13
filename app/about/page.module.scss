@@ -53,26 +53,29 @@ border-radius: 30px;
   padding: 10px 20px;
   background-color: #7a2929;
 }
-.navbarLink {
-  text-decoration: none;
-  color: white;
-  text-align: left;
-}
-.navbarLink:hover {
-  color: white;
-}
-
 .test {
   padding: 10px 20px;
-  background-color: #7a2929;
+  background-color: transparent;
   border-radius: 20px;
   text-align: center;
   margin-left: 40px;
   transition: transform 0.3s ease, font-weight 0.3s ease, box-shadow 0.3s ease;
   font-size: 1.125rem;
+  border: solid 2px #E42807;
+
 }
 .test:hover {
   cursor: pointer;
   transform: scale(1.05);
+  effect: 0.3s easein-out;
+  background-color: #E42807;
 }
 
+.navbarLink {
+  text-decoration: none;
+  color: rgb(38, 30, 30);
+  text-align: left;
+}
+.navbarLink:hover {
+  color: white;
+}

@@ -1,6 +1,8 @@
 .loginContainer {
   display: flex;
   flex-direction: column;
+  min-height: 60vh;
+  align-items: center;
 
 
   .form {
@@ -10,10 +12,7 @@
     border: 2px solid #FFF;
     box-shadow: -40.33333206176758px 40.33333206176758px 40.33333206176758px 0px rgba(255, 255, 255, 0.10) inset, 40.33333206176758px -40.33333206176758px 40.33333206176758px 0px rgba(0, 0, 0, 0.10) inset;
     backdrop-filter: blur(40.33333206176758px);
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
+
 
     .loginForm {
       display: flex;

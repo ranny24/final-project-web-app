@@ -2,6 +2,9 @@
   max-width: 960px;
   margin: 0 auto;
   padding: 30px;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .navbar {
@@ -56,7 +59,7 @@
 
 }
 .text {
-  font-size: 1.5rem;
+  font-size: 1.10rem;
   color: white;
   display: flex;
   justify-content: center;
@@ -79,7 +82,6 @@
   padding-bottom: 10px;
   font-family: 'Abril Fatface', sans-serif;
   letter-spacing: 0.2rem;
-
 }
 
 .h3 {
@@ -96,4 +98,11 @@
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 0.2rem;
   color: #E42807;
+}
+
+.textContainer {
+  display:flex;
+  align-items: center;
+  gap: 20px;
+  width: 600px;
 }

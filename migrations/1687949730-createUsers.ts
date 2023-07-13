@@ -3,6 +3,8 @@ import { Sql } from 'postgres';
 export type User = {
   id: number;
   username: string;
+  bio: string;
+  imageUrl: string;
   // Omit passwordHash for security
 };
 
@@ -11,7 +13,9 @@ export async function up(sql: Sql) {
     CREATE TABLE users (
       id integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
       username varchar(80) NOT NULL UNIQUE,
-      password_hash varchar(80) NOT NULL
+      password_hash varchar(80) NOT NULL,
+      bio varchar(500) NOT NULL,
+      image_url varchar(500) NOT NULL
     )
   `;
 }

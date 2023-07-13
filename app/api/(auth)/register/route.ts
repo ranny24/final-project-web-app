@@ -5,7 +5,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { createSession } from '../../../../database/sessions';
 import { createUser, getUserByUsername } from '../../../../database/users';
-import { User } from '../../../../migrations/1687949730-createUsers';
 import { secureCookieOptions } from '../../../../util/cookies';
 
 type Error = {
@@ -14,13 +13,16 @@ type Error = {
 
 export type RegisterResponseBodyPost =
   | {
-      user: User;
+      user: { username: string; id: number };
     }
   | Error;
 
+//  z object to validate user data
 const userSchema = z.object({
   username: z.string().min(1),
   password: z.string().min(1),
+  bio: z.string().min(1),
+  imageUrl: z.string().min(1),
 });
 
 export async function POST(
@@ -28,41 +30,44 @@ export async function POST(
 ): Promise<NextResponse<RegisterResponseBodyPost>> {
   const body = await request.json();
 
-  // 1. get the credentials from the body
+  // get credentials from the body
+  // console.log(body);
   const result = userSchema.safeParse(body);
 
-  // 2. verify the user data and check that the name is not taken
+  // verify the user data and check that the name is not taken
   if (!result.success) {
-    // zod send you details about the error
-    // console.log(result.error);
     return NextResponse.json(
       {
-        error: 'username or password missing',
+        error: 'Required information is incomplete',
       },
       { status: 400 },
     );
   }
 
+  // verify if the user is already taken
+  // console.log(await getUserByUsername(result.data.username));
   if (await getUserByUsername(result.data.username)) {
-    // zod send you details about the error
-    // console.log(result.error);
     return NextResponse.json(
       {
-        error: 'username is already used',
+        error: 'Username is taken',
       },
       { status: 406 },
     );
   }
 
-  // 3. hash the password
+  // hash the password
   const passwordHash = await bcrypt.hash(result.data.password, 10);
-
-  // 4. store the credentials in the db
-  const newUser = await createUser(result.data.username, passwordHash);
+  // console.log(passwordHash, result.data.password);
+  // store credentials in the DB
+  const newUser = await createUser(
+    result.data.username,
+    passwordHash,
+    result.data.bio,
+    result.data.imageUrl,
+  );
 
   if (!newUser) {
     // zod send you details about the error
-    // console.log(result.error);
     return NextResponse.json(
       {
         error: 'Error creating the new user',
@@ -95,6 +100,5 @@ export async function POST(
     ...secureCookieOptions,
   });
 
-  // 7. return the new user to the client
   return NextResponse.json({ user: newUser });
 }

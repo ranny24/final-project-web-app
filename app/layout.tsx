@@ -6,6 +6,7 @@ import { getUserBySessionToken } from '../database/users';
 import Footer from './components/Footer';
 import NavPage from './components/Nav';
 import { LogoutButton } from './LogoutButton';
+import styles from './page.module.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,25 +31,45 @@ export default async function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body>
-        <div>
-          {user ? (
-            <>
-             {/*  <div>{user.username}</div>
-              <LogoutButton /> */}<NavPage user={user}/>
-            </>
-          ) : (
-            <>
-            </>
+        <div className={styles.container}>
+          <h1 className={styles.h1}>Rock City Riffs!</h1>
+          <p className={styles.par}>"Unleashing the Power of Live Music"</p>
+          <nav className={styles.navbar}>
+            <Link className={styles.test} href="/events/new">
+              <div className={styles.navbarLink}>Create Event</div>
+            </Link>
+            <Link className={styles.test} href="/events">
+              <div className={styles.navbarLink}>Events</div>
+            </Link>
+            <Link className={styles.test} href="/about">
+              <div className={styles.navbarLink}>About Us</div>
+            </Link>
 
-          )}
+            {user ? (
+              <div className={styles.textContainer}>
+                <div className={styles.text}>
+                  {' '}
+                  Rock and Roll, {user.username} !
+                </div>
+                <LogoutButton />
+              </div>
+            ) : (
+              <>
+                <Link className={styles.test} href="/login">
+                  <div className={styles.navbarLink}>Log In</div>
+                </Link>
 
+                <Link className={styles.test} href="/register">
+                  <div className={styles.navbarLink}>Register</div>
+                </Link>
+              </>
+            )}
+          </nav>
         </div>
 
         {children}
-        <Footer/>
+        <Footer />
       </body>
-
     </html>
-
   );
 }
