@@ -21,7 +21,7 @@ export function setEnvironmentVariables() {
   dotenv.config();
 
   const unconfiguredEnvVars = Object.keys(
-    dotenv.parse(readFileSync('./.env.example')),
+    dotenv.parse(readFileSync('./.env')),
   ).filter((exampleKey) => !process.env[exampleKey]);
 
   if (unconfiguredEnvVars.length > 0) {
