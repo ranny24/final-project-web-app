@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Dark from '../../public/Dark.gif';
-import Nav from '../components/Nav';
 import styles from './page.module.scss';
 
 export const metadata = {
@@ -38,23 +37,21 @@ export default function AboutPage() {
             performances. Get ready to rock on with Rock City Riffs!
           </p>
 
-     <br></br>
           <nav className={styles.navbar}>
-          <Link className={styles.test} href="/events/new">
-            <div className={styles.navbarLink}>Create Event</div>
-          </Link>
-          <Link className={styles.test} href="/events">
-            <div className={styles.navbarLink}>Events</div>
-          </Link>
-          <Link className={styles.test} href="/login">
-            <div className={styles.navbarLink}>Log In</div>
-          </Link>
+            <Link className={styles.test} href="/events/new">
+              <div className={styles.navbarLink}>Create Event</div>
+            </Link>
+            <Link className={styles.test} href="/events">
+              <div className={styles.navbarLink}>Events</div>
+            </Link>
+            <Link className={styles.test} href="/login">
+              <div className={styles.navbarLink}>Log In</div>
+            </Link>
 
-          <Link className={styles.test} href="/register">
-            <div className={styles.navbarLink}>Register</div>
-          </Link>
-        </nav>
-
+            <Link className={styles.test} href="/register">
+              <div className={styles.navbarLink}>Register</div>
+            </Link>
+          </nav>
         </div>
 
         <Image

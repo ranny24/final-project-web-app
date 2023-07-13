@@ -10,7 +10,7 @@ export const getEvents = cache(async () => {
 });
 
 export const createEvent = cache(
-  async (bandame: string, venue: string, date: number, description: string) => {
+  async (bandame: string, venue: string, date: string, description: string) => {
     const [event] = await sql<Event[]>`
       INSERT INTO events
         (band_name, venue, description, date)

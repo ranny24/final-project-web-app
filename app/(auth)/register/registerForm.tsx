@@ -12,16 +12,10 @@ export default function RegisterForm() {
   /* const [profileName, setProfileName] = useState(''); */
   const [bio, setBio] = useState('');
   const [imageUrl, setImageUrl] = useState<string | null>(null);
-  const [passwordShown, setPasswordShown] = useState(false);
 
   const [error, setError] = useState<string>();
-  const [success, setSuccess] = useState(false);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const router = useRouter();
-
-  const togglePassword = () => {
-    setPasswordShown(!passwordShown);
-  };
 
   // change image
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -79,7 +73,7 @@ export default function RegisterForm() {
         setError(data.error);
         return;
       }
-      setSuccess(true);
+
       console.log(data.user);
       router.push(`/profile/${data.user.username}`);
       router.refresh();
@@ -93,10 +87,7 @@ export default function RegisterForm() {
 
         <h4 className={styles.title}>Please, register.</h4>
 
-        <form
-          className={styles.loginForm}
-          onSubmit={handleOnSubmit}
-        >
+        <form className={styles.loginForm} onSubmit={handleOnSubmit}>
           <div>
             <label htmlFor="username">Username:</label>
             <input
