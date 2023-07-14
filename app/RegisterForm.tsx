@@ -83,7 +83,7 @@ export default function RegisterForm() {
   return (
     <div className={styles.loginContainer}>
       <div className={styles.form}>
-        
+
 
         <h4 className={styles.title}>Please, register.</h4>
 

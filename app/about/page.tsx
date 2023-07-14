@@ -37,22 +37,7 @@ export default function AboutPage() {
             performances. Get ready to rock on with Rock City Riffs!
           </p>
 
-          <nav className={styles.navbar}>
-            <Link className={styles.test} href="/events/new">
-              <div className={styles.navbarLink}>Create Event</div>
-            </Link>
-            <Link className={styles.test} href="/events">
-              <div className={styles.navbarLink}>Events</div>
-            </Link>
-            <Link className={styles.test} href="/login">
-              <div className={styles.navbarLink}>Log In</div>
-            </Link>
-
-            <Link className={styles.test} href="/register">
-              <div className={styles.navbarLink}>Register</div>
-            </Link>
-          </nav>
-        </div>
+          
 
         <Image
           className={styles.img}
