@@ -36,8 +36,7 @@ export default function AboutPage() {
             as you immerse yourself in the electrifying world of live rock
             performances. Get ready to rock on with Rock City Riffs!
           </p>
-
-          
+        </div>
 
         <Image
           className={styles.img}
