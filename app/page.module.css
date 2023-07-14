@@ -3,8 +3,8 @@
   margin: 0 auto;
   padding: 30px;
   display: flex;
-    flex-direction: column;
-    align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .navbar {
@@ -28,14 +28,13 @@
   margin-left: 40px;
   transition: transform 0.3s ease, font-weight 0.3s ease, box-shadow 0.3s ease;
   font-size: 1.125rem;
-  border: solid 2px #E42807;
-
+  border: solid 2px #e42807;
 }
 .test:hover {
   cursor: pointer;
   transform: scale(1.05);
   effect: 0.3s easein-out;
-  background-color: #E42807;
+  background-color: #e42807;
 }
 
 .navbarLink {
@@ -56,18 +55,15 @@
   text-align: left;
   display: flex;
   margin-top: 100px;
-
 }
 .text {
-  font-size: 1.10rem;
+  font-size: 1.5rem;
   color: white;
   display: flex;
   justify-content: center;
   align-items: left;
   text-align: left;
   padding-left: 200px;
-
-
 }
 .logo {
   width: 300px;
@@ -88,7 +84,7 @@
   padding-left: 200px;
   padding-bottom: 50px;
   font-size: 2rem;
-  color: #E42807;
+  color: #e42807;
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 0.2rem;
 }
@@ -97,11 +93,11 @@
   font-size: 1.5rem;
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 0.2rem;
-  color: #E42807;
+  color: #e42807;
 }
 
 .textContainer {
-  display:flex;
+  display: flex;
   align-items: center;
   gap: 20px;
   width: 600px;

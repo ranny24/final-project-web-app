@@ -10,7 +10,7 @@ export const metadata = {
 
 export default async function EventPage() {
   const events = await getEvents();
-
+console.log (events)
   return (
     <main>
       <h1 className={styles.h1}>These are the latest Events in Town!</h1>

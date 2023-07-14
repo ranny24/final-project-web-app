@@ -1,8 +1,9 @@
 .loginContainer {
   display: flex;
   flex-direction: column;
-  min-height: 60vh;
+  min-height: 70vh;
   align-items: center;
+  padding: 60px;
 
 
   .form {
@@ -69,8 +70,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding-top: 5px;
+  color:rgb(221, 211, 211);
 
   .registerLink {
     background-color: transparent;
@@ -88,7 +90,10 @@
   align-items: center;
   color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
-  margin-bottom: 25px;
+  margin-bottom: 60px;
+  margin-top:10px;
+  border-radius: 10px;
+  font-size: 1.5rem;
 }
 
 .background {
@@ -103,5 +108,9 @@
 }
 
 .user	{
-  color: pink
+  color: rgb(221, 211, 211);
+}
+
+.username {
+  border-radius: 10px;
 }

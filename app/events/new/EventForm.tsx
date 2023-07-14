@@ -1,6 +1,7 @@
 'use client';
-
+import { NextResponse } from 'next/server';
 import { useState } from 'react';
+import { createEvent } from '../../../database/events';
 import { Event } from '../../../migrations/1234457678-insertEvents';
 import styles from './EventForm.module.scss';
 
@@ -90,15 +91,11 @@ export default function EventForm({ events }: Props) {
 
       {!event ? null : (
         <div className={styles.new}>
-          {' '}
-          {event.bandName}, {event.venue}, {event.date}, {event.description},{' '}
-          {event.date}{' '}
+          
+          {event.bandName}, {event.venue}, {event.date}, {event.description},
+          {event.date}
         </div>
       )}
-      {/* {!event ? null : <div  className={styles.new}></div>}
-      {!event ? null : <div className={styles.new}></div>}
-      {!event ? null : <div className={styles.new}></div>}
-      {!event ? null : <div className={styles.new}></div>} */}
     </>
   );
 }

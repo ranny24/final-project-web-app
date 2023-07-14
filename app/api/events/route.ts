@@ -7,7 +7,7 @@ export type Error = {
   error: string;
 };
 
-/* type EventResponseBodyGet = { events: Event[] } | Error; */
+type EventResponseBodyGet = { events: Event[] } | Error;
 type EventResponseBodyPost = { event: Event } | Error;
 
 const eventSchema = z.object({
@@ -37,6 +37,7 @@ export async function POST(
     );
   }
   // query the database to get all the events
+
   const newEvent = await createEvent(
     result.data.bandName,
     result.data.venue,

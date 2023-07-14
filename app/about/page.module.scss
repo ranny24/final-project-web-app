@@ -1,7 +1,7 @@
 .main {
   margin-top: 100px;
   background-color: rgb(242, 235, 235);
-border-radius: 30px;
+  border-radius: 30px;
   .container {
     display: flex;
     flex-direction: row;
@@ -23,12 +23,10 @@ border-radius: 30px;
     }
 
     p {
-      font-size: 1.30rem;
+      font-size: 1.3rem;
       margin: 0px 150px 30px 150px;
       display: flex;
       text-align: justify;
-
-
     }
   }
 
@@ -61,14 +59,13 @@ border-radius: 30px;
   margin-left: 40px;
   transition: transform 0.3s ease, font-weight 0.3s ease, box-shadow 0.3s ease;
   font-size: 1.125rem;
-  border: solid 2px #E42807;
-
+  border: solid 2px #e42807;
 }
 .test:hover {
   cursor: pointer;
   transform: scale(1.05);
   effect: 0.3s easein-out;
-  background-color: #E42807;
+  background-color: #e42807;
 }
 
 .navbarLink {
@@ -80,17 +77,14 @@ border-radius: 30px;
   color: white;
 }
 
-.div	{
-  color:white;
-
-
+.div {
+  color: rgb(39, 34, 34);
 }
 
-.h1{
-  color:white;
+.h1 {
+  color: rgb(39, 34, 34);
 }
 
-.p	{
-  color:white;
-  
+.p {
+  color: rgb(39, 34, 34);
 }

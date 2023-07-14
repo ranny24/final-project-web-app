@@ -60,7 +60,7 @@ export default function LoginForm(props: Props) {
             <label className={styles.user} htmlFor="username">
               Username:
             </label>
-            <input
+            <input className={styles.user}
               value={username}
               onChange={(event) => setUsername(event.currentTarget.value)}
             />

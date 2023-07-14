@@ -1,24 +1,137 @@
 .loginContainer {
   display: flex;
   flex-direction: column;
+  min-height: 70vh;
+  align-items: center;
+
 
   .form {
-    height: 450px;
-    width: 600px;
-    background-color: rgba(255, 255, 255, 0.13);
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    border-radius: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 10px rgba(8, 7, 16, 0.6);
-    padding: 35px 35px;
+    height: 478px;
+    width: 520px;
+    border-radius: 20px;
+    border: 2px solid #FFF;
+    box-shadow: -40.33333206176758px 40.33333206176758px 40.33333206176758px 0px rgba(255, 255, 255, 0.10) inset, 40.33333206176758px -40.33333206176758px 40.33333206176758px 0px rgba(0, 0, 0, 0.10) inset;
+    backdrop-filter: blur(40.33333206176758px);
+
 
     .loginForm {
       display: flex;
-      flex-direction: column;
+      flex-direction: column;.loginContainer {
+        display: flex;
+        flex-direction: column;
+        min-height: 70vh;
+        align-items: center;
+
+
+        .form {
+          height: 478px;
+          width: 520px;
+          border-radius: 20px;
+          border: 2px solid #FFF;
+          box-shadow: -40.33333206176758px 40.33333206176758px 40.33333206176758px 0px rgba(255, 255, 255, 0.10) inset, 40.33333206176758px -40.33333206176758px 40.33333206176758px 0px rgba(0, 0, 0, 0.10) inset;
+          backdrop-filter: blur(40.33333206176758px);
+
+
+          .loginForm {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            border-radius: 20px;
+
+
+            div {
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+
+              label {
+                font-size: 1rem;
+              }
+
+              input {
+                width: 100%;
+                height: 40px;
+              }
+            }
+          }
+          .loginSubmit {
+            height: 40px;
+            width: 100%;
+            border: 1px solid;
+            cursor: pointer;
+            left: 525px;
+            top: 627px;
+            color: rgb(1, 38, 13);
+            border-radius: 5px;
+            margin-top: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+
+            &:hover {
+              border: 1px solid #8f7e7e;
+              background-color: white;
+              color: #8f7e7e;
+              cursor: pointer;
+            }
+          }
+
+          .error {
+            color: rgb(207, 55, 55);
+            font-size: 1, 25rem;
+          }
+        }
+      }
+
+      .signupContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 0.8rem;
+        padding-top: 5px;
+
+        .registerLink {
+          background-color: transparent;
+          border: none;
+
+          padding-left: 8px;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+
+      .title {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+        margin-bottom: 40px;
+        border-radius: 10px;
+      }
+
+      .background {
+
+        width: 598.802px;
+        height: 600px;
+        position: absolute;
+        left: 70%;
+
+
+        flex-shrink: 0;
+      }
+
+      .user	{
+        color: pink
+      }
+
+      .username {
+        border-radius: 10px;
+      }
+
       gap: 16px;
+      border-radius: 20px;
+
 
       div {
         display: flex;
@@ -74,6 +187,7 @@
   .loginLink {
     background-color: transparent;
     border: none;
+
     padding-left: 8px;
     text-decoration: underline;
     cursor: pointer;
@@ -84,9 +198,11 @@
   justify-content: center;
   display: flex;
   align-items: center;
-  color: rgb(0, 0, 0);
+  color: rgb(54, 39, 39);
   background-color: rgb(255, 255, 255);
-  margin-bottom: 15px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  font-size: 1.5rem;
 }
 
 .background	{
@@ -107,9 +223,10 @@ align-items: center;
 }
 
 .button	{
-  color:pink
+  color:rgb(177, 25, 50)
+
 }
 
 .profilePicInput	{
-  color: pink
+  color: rgb(230, 218, 221)
 }
