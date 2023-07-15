@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { getEvents } from '../../database/events';
 import styles from './page.module.scss';
@@ -10,7 +9,7 @@ export const metadata = {
 
 export default async function EventPage() {
   const events = await getEvents();
-console.log (events)
+
   return (
     <main>
       <h1 className={styles.h1}>These are the latest Events in Town!</h1>
@@ -21,13 +20,14 @@ console.log (events)
               <p className={styles.bandName}>{event.bandName}</p>
             </Link>
             <div className={styles.imageContainer}>
-              <Image
-                src={event.image}
-                alt="Picture of the author"
-                width={500}
-                height={300}
-                layout="responsive"
-              />
+              <div className={styles.images}>
+                <img
+                  src={event.image}
+                  alt="Picture of the author"
+width={500}
+height={300}
+                />
+              </div>
             </div>
             <div className={styles.eventDetails}>
               <div className={styles.detail}>

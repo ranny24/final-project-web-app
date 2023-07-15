@@ -1,6 +1,7 @@
 'use client';
+import Image from 'next/image';
 import { NextResponse } from 'next/server';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { createEvent } from '../../../database/events';
 import { Event } from '../../../migrations/1234457678-insertEvents';
 import styles from './EventForm.module.scss';
@@ -14,10 +15,28 @@ export default function EventForm({ events }: Props) {
   const [venueInput, setVenueInput] = useState('');
   const [dateInput, setDateInput] = useState('');
   const [descriptionInput, setDescriptionInput] = useState('');
-  /*  const [imageInput, setimageInput] = useState(''); */
+  const [imageInput, setImageInput] = useState<File | null>(null);
   const [event, setEvent] = useState<Event>();
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
+
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+
 
   async function createEvent() {
+    const formData = new FormData();
+    if (imageInput) {
+      formData.append('file', imageInput);
+    }
+    formData.append('upload_preset', 'riffs_upload');
+
+    const eventPic = await fetch(
+      `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
+      {
+        method: 'POST',
+        body: formData,
+      }
+    ).then((r) => r.json());
+
     const response = await fetch('/api/events', {
       method: 'POST',
       body: JSON.stringify({
@@ -25,7 +44,7 @@ export default function EventForm({ events }: Props) {
         venue: venueInput,
         date: dateInput,
         description: descriptionInput,
-        /* image: imageInput, */
+        image: eventPic.secure_url,
       }),
     });
 
@@ -39,12 +58,16 @@ export default function EventForm({ events }: Props) {
     setEvent(data.event);
   }
 
+  function handleFileChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const files = event.target.files;
+    if (files && files.length > 0) {
+      setImageInput(files[0]);
+    }
+  }
+
   return (
     <>
-      <form
-        className={styles.form}
-        onSubmit={(event) => event.preventDefault()}
-      >
+      <form className={styles.form} onSubmit={(event) => event.preventDefault()}>
         <label className={styles.label}>
           Band Name
           <input
@@ -81,17 +104,28 @@ export default function EventForm({ events }: Props) {
           />
         </label>
         <br />
-        <button
-          className={styles.button}
-          onClick={async () => await createEvent()}
-        >
+        <div className={styles.eventPic}>
+            <label htmlFor="eventPic">
+              Event picture <span>*</span>
+            </label>
+            <input
+              data-test-id="register-image"
+              id="eventPic"
+              type="file"
+              name="file"
+              ref={fileInputRef}
+              
+              className={styles.eventPicInput}
+            />
+          </div>
+        <br />
+        <button className={styles.button} onClick={createEvent}>
           Create New Event
         </button>
       </form>
 
       {!event ? null : (
         <div className={styles.new}>
-          
           {event.bandName}, {event.venue}, {event.date}, {event.description},
           {event.date}
         </div>

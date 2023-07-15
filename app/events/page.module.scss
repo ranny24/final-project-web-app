@@ -20,10 +20,6 @@
 }
 
 .imageContainer {
-  width: 100%;
-  max-width: 500px;
-  margin-bottom: 10px;
-  align-items: center;
   border: 5px solid #9e95ac;
   border-radius: 8px;
   align-content: center;
@@ -52,8 +48,15 @@
   padding-top: 10px;
   filter: drop-shadow(0 0 0.4rem #9e95ac);
   font-family: 'Abril Fatface', sans-serif;
-
 }
 .pageContainer {
   justify-content: center;
+}
+
+.images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  size: 50%;
 }
