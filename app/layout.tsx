@@ -32,7 +32,9 @@ export default async function RootLayout({ children }: Props) {
     <html lang="en">
       <body>
         <div className={styles.container}>
-          <h1 className={styles.h1}>Rock City Riffs!</h1>
+          <Link href="/">
+            <h1 className={styles.h1}>Rock City Riffs!</h1>
+          </Link>
           <p className={styles.par}>"Unleashing the Power of Live Music"</p>
           <nav className={styles.navbar}>
             <Link className={styles.test} href="/events/new">
